@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import MyCard from "../components/MyCard";
-import { GetTransferList } from "@/api/transfer";
 interface TransferItem {
   ID: number;
   CreatedAt: string;
@@ -45,18 +44,6 @@ export interface ExtraDataType {
 }
 export default function Page() {
   const [TransferList, setTransferList] = useState<TransferItem[]>([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await GetTransferList();
-        setTransferList(response.body.result);
-        console.log(response, "666666*****");
-      } catch (error) {
-        console.error("Failed to fetch transfer list:", error);
-      }
-    };
-    fetchData();
-  }, []);
   return (
     <div>
       {TransferList?.map((item: TransferItem, index: number) => {
