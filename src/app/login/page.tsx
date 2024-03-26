@@ -26,8 +26,8 @@ const LoginPage = () => {
   const { setMpcAddress, setAddressList, setCurrentAddress } = useAddress(
     (state) => state
   );
-  const [password, setPasswork] = useState("haha123123");
-  const [email, setEmail] = useState("doracatk@gmail.com");
+  const [password, setPasswork] = useState("123456789");
+  const [email, setEmail] = useState("su_5482@163.com");
   const [code, setCode] = useState("");
   const { setLoading } = useContext(LoadingContext);
 
